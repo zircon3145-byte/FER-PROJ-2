@@ -79,3 +79,6 @@ def train_model():
     # -------------------------
     model.save("models/final_emotion_model.keras")
     print("✅ Training complete. Model saved as models/final_emotion_model.keras")
+
+if __name__ == "__main__":
+    train_model()  
