@@ -84,19 +84,6 @@ pip install -r requirements.txt
 
 ---
 
-### 4. Prepare Dataset
-Unzip the dataset:
-```bash
-unzip data.zip
-```
-
-Make sure it extracts into:
-```text
-data/raw/train/...
-```
-
----
-
 #  OpenCV Version (Desktop Webcam)
 
 ### Step 1: Preprocess Data
@@ -130,7 +117,7 @@ python -m src.train
 
 ### Step 3: Start Backend Server
 ```bash
-uvicorn app:app --reload --host 0.0.0.0 --port 8000
+uvicorn api.app:app --reload
 ```
 
 ### Step 4: Launch Frontend
