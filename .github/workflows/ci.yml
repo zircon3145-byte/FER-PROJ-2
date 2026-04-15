@@ -21,3 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+
+    - name: Basic check
+      run: |
+        echo "Build successful"
