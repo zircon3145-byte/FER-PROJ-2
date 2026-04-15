@@ -3,3 +3,10 @@ __pycache__/
 *.pyo
 venv/
 .env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
