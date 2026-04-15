@@ -37,3 +37,7 @@ jobs:
     - name: Tag Docker image
       run: |
         docker tag fer-project ${{ secrets.DOCKER_USERNAME }}/fer-project:latest
+
+    - name: Push Docker image
+      run: |
+        docker push ${{ secrets.DOCKER_USERNAME }}/fer-project:latest    
