@@ -12,6 +12,9 @@ It supports both:
 
 ```text
 FER-PROJ-2/
+├── .github/
+│   ├── workflows/
+│   ├── ci.yml
 ├── api/
 │   ├── __pycache__/
 │   └── app.py
