@@ -16,7 +16,6 @@ FER-PROJ-2/
 │   ├── workflows/
 │   ├── ci.yml
 ├── api/
-│   ├── __pycache__/
 │   └── app.py
 ├── data/
 │   ├── processed/
@@ -31,19 +30,16 @@ FER-PROJ-2/
 │   ├── best_emotion_model.keras
 │   └── final_emotion_model.keras
 └── src/
-    ├── __pycache__/
     ├── data/
     │   ├── __pycache__/
     │   ├── __init__.py
     │   ├── preprocess.py
     │   └── split.py
     ├── inference/
-    │   ├── __pycache__/
     │   ├── __init__.py
     │   ├── predict.py
     │   └── webcam.py
     ├── models/
-    │   ├── __pycache__/
     │   ├── __init__.py
     │   ├── evaluate.py
     │   ├── model.py
@@ -52,7 +48,6 @@ FER-PROJ-2/
     │   ├── __init__.py
     │   └── config.py
     └── __init__.py
-├── venv/
 ├── Dockerfile
 ├── README.md
 ├── requirements.txt
