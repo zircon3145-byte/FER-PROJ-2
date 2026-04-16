@@ -78,21 +78,39 @@ def train_model():
     # Build Model
     # -------------------------
     model = build_light_model()
-    model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
+    model.compile(
+        optimizer="adam", 
+        loss="categorical_crossentropy", 
+        metrics=["accuracy"]
+    )
 
     # -------------------------
     # Callbacks
     # -------------------------
-    os.makedirs("models", exist_ok=True)  # ensure folder exists
+    os.makedirs("models_artifacts", exist_ok=True)  # ensure folder exists
+    
     callbacks = [
-        EarlyStopping(monitor="val_loss", patience=10, restore_best_weights=True),
-        ModelCheckpoint("models/best_emotion_model.keras", monitor="val_accuracy", save_best_only=True)
+        EarlyStopping(
+            monitor="val_loss", 
+            patience=10, 
+            restore_best_weights=True
+        ),
+        ModelCheckpoint(
+            "models/best_emotion_model.keras", 
+            monitor="val_accuracy", 
+            save_best_only=True
+        )
     ]
 
     # -------------------------
     # Training
     # -------------------------
-    history = model.fit(train_ds, validation_data=val_ds, epochs=EPOCHS, callbacks=callbacks)
+    history = model.fit(
+        train_ds, 
+        validation_data=val_ds, 
+        epochs=EPOCHS, 
+        callbacks=callbacks
+    )
 
     # -------------------------
     # Save final model
