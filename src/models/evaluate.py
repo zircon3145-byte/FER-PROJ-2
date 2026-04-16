@@ -73,8 +73,17 @@ def evaluate_model(model_path="models/final_emotion_model.keras"):
     )
 
     # -------------------------
-    # Report
+    # Log to MLflow
     # -------------------------
-    print("✅ Evaluation complete. Classification report:\n")
+    mlflow.log_metric("val_accuracy", acc)
+
+    for label in CLASS_NAMES:
+        mlflow.log_metric(f"{label}_f1", report[label]["f1-score"])
+        
+    mlflow.log_metric("macro_f1", report["macro avg"]["f1-score"])
+    mlflow.log_metric("weighted_f1", report["weighted avg"]["f1-score"])
+        
+    print("✅ Evaluation complete")
     print(classification_report(y_true, y_pred, target_names=CLASS_NAMES, digits=4))
-    return classification_report(y_true, y_pred, target_names=CLASS_NAMES, digits=4)
+    
+    return report
