@@ -113,6 +113,16 @@ def train_model():
     )
 
     # -------------------------
+    # Log metrics (final epoch)
+    # -------------------------
+    mlflow.log_metrics({
+        "train_acc": history.history["accuracy"][-1],
+        "val_acc": history.history["val_accuracy"][-1],
+        "train_loss": history.history["loss"][-1],
+        "val_loss": history.history["val_loss"][-1]
+    })
+
+    # -------------------------
     # Save final model
     # -------------------------
     model.save("models/final_emotion_model.keras")
