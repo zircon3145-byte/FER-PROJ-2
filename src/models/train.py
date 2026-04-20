@@ -96,7 +96,7 @@ def train_model():
             restore_best_weights=True
         ),
         ModelCheckpoint(
-            "models/best_emotion_model.keras", 
+            "models_artifacts/best_emotion_model.keras", 
             monitor="val_accuracy", 
             save_best_only=True
         )
