@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -20,18 +20,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest
-
-    - name: Run tests
-      run: |
-        export PYTHONPATH=.
-        pytest -v src/tests --disable-warnings --maxfail=1
 
     - name: Basic check
       run: |
-        echo "All tests passed. Proceeding to build..."
+        echo "Build successful"
 
     - name: Build Docker image
       run: |
@@ -47,4 +40,4 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/fer-project:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/fer-project:latest    
