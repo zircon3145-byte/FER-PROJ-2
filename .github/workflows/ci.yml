@@ -25,5 +25,5 @@ jobs:
 
     - name: Run tests
       run: |
-        export PYTHONPATH=.
-        pytest -q
+        export PYTHONPATH=$PYTHONPATH:.
+        pytest -q tests
