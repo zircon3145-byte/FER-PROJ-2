@@ -8,5 +8,3 @@ scikit-learn
 tqdm
 python-multipart
 mlflow
-pytest
-httpx
