@@ -44,7 +44,7 @@ FER-PROJ-2/
     ├── inference/
     │   ├── __init__.py
     │   ├── predict.py
-    │   └── webcam.py
+    │   └── webcam.py # if user prefers openCV
     ├── models/
     │   ├── __init__.py
     │   ├── evaluate.py
@@ -57,8 +57,8 @@ FER-PROJ-2/
 ├── Dockerfile
 ├── README.md
 ├── requirements.txt
-├── run_pipeline.py
-└── shellscript.sh
+├── run_pipeline.py # if user prefers web version by python script
+└── shellscript.sh  # if user prefers web version by shell script
 ```
 
 ---
