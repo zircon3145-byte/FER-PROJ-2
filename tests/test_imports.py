@@ -53,7 +53,7 @@ def test_project_imports():
     assert callable(predict_emotion)
     assert callable(setup_mlflow)
     assert callable(build_light_model)
-    #THIS LIEN BELOW DOESNT WORK
+    # THIS LIEN BELOW DOESNT WORK FOR TESTING PURPOSES, BUT THE FUNCTION IS DEFINITELY THERE
     assert callable(train_model)
     assert callable(evaluate_model)
     assert callable(preprocess_and_save)
