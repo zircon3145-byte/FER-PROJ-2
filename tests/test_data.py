@@ -89,9 +89,10 @@ def test_preprocess_runs(tmp_path):
     output_dir = tmp_path / "processed"
 
     try:
+        
         preprocess_and_save(
-            input_dir=RAW_TRAIN_DIR,
-            output_dir=str(output_dir)
+            RAW_TRAIN_DIR,
+            str(output_dir)
         )
     except Exception as e:
         pytest.fail(f"Preprocessing failed: {e}")
@@ -107,8 +108,8 @@ def test_processed_output_created(tmp_path):
     output_dir = tmp_path / "processed"
 
     preprocess_and_save(
-        input_dir=RAW_TRAIN_DIR,
-        output_dir=str(output_dir)
+        RAW_TRAIN_DIR,
+        str(output_dir)
     )
 
     assert os.path.exists(output_dir)
