@@ -44,7 +44,7 @@ def test_project_imports():
     from src.inference.predict import predict_emotion
     from src.utils.mlflow_config import setup_mlflow
     from src.models.model import build_light_model
-    #THIS LINE BELOW DOESNT WORK
+    # THIS LINE BELOW DOESNT WORK FOR TESTING PURPOSES, BUT THE FUNCTION IS DEFINITELY THERE
     from src.models.train import train_model
     from src.models.evaluate import evaluate_model
     from src.data.preprocess import preprocess_and_save
