@@ -1,1 +1,17 @@
+import numpy as np
+import pytest
 
+from src.models.model import build_light_model
+from src.inference.predict import IMG_SIZE, CLASS_NAMES
+
+
+# =========================
+# Model builds correctly
+# =========================
+def test_model_build():
+    model = build_light_model()
+
+    assert model is not None
+    assert hasattr(model, "summary")
+    assert hasattr(model, "input_shape")
+    assert hasattr(model, "output_shape")
