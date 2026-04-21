@@ -21,3 +21,17 @@ def test_fastapi_stack():
 
     assert fastapi is not None
     assert TestClient is not None
+
+def test_ml_stack_imports():
+    import tensorflow
+    import mlflow
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import classification_report, accuracy_score
+    from tqdm import tqdm
+
+    assert tensorflow is not None
+    assert mlflow is not None
+    assert train_test_split is not None
+    assert classification_report is not None
+    assert accuracy_score is not None
+    assert tqdm is not None
