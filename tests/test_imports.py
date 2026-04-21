@@ -35,3 +35,13 @@ def test_ml_stack_imports():
     assert classification_report is not None
     assert accuracy_score is not None
     assert tqdm is not None
+
+def test_project_imports():
+    from api.app import app
+    from src.inference.predict import predict_emotion
+    from src.utils.mlflow_config import setup_mlflow
+
+    assert app is not None
+    assert callable(predict_emotion)
+    assert callable(setup_mlflow)
+  
