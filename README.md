@@ -79,6 +79,7 @@ source venv/bin/activate
 ### 3. Install Requirements
 ```bash
 pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 ---
@@ -87,17 +88,17 @@ pip install -r requirements.txt
 
 ### 1. Preprocess Data
 ```bash
-python -m src.preprocess
+python -m src.data.preprocess
 ```
 
 ### 2. Train Model
 ```bash
-python -m src.train
+python -m src.models.train
 ```
 
 ### 3. Run Webcam Detection
 ```bash
-python -m src.webcam
+python -m src.inference.webcam
 ```
 
 ---
@@ -106,12 +107,12 @@ python -m src.webcam
 
 ### Step 1: Preprocess Data
 ```bash
-python -m src.preprocess
+python -m src.data.preprocess
 ```
 
 ### Step 2: Train Model
 ```bash
-python -m src.train
+python -m src.models.train
 ```
 
 ### Step 3: Start Backend Server
@@ -164,4 +165,5 @@ chmod +x shellscript.sh
 ##  Notes
 - Ensure your webcam is accessible  
 - Backend must be running before opening the frontend  
-- Model file (`final_emotion_model.keras`) must exist in root directory  
+- Model file (`final_emotion_model.keras`) must exist in model_artifacts
+****
