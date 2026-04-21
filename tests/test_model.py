@@ -52,3 +52,21 @@ def test_forward_pass_batch():
     y = model(x)
 
     assert y.shape == (batch_size, len(CLASS_NAMES))
+
+
+# =========================
+# Output behaves like probabilities
+# =========================
+def test_output_probabilities():
+    model = build_light_model()
+
+    x = np.random.rand(1, IMG_SIZE, IMG_SIZE, 1).astype("float32")
+    y = model(x).numpy()
+
+    # Values should be between 0 and 1
+    assert np.all(y >= 0)
+    assert np.all(y <= 1)
+
+    # Probabilities should sum to ~1 (softmax)
+    total = np.sum(y)
+    assert np.isclose(total, 1.0, atol=1e-3)
