@@ -53,3 +53,19 @@ def test_raw_contains_images():
         pytest.skip("No images found in raw dataset")
 
     assert found_image
+
+# =========================
+# Image can be read by OpenCV
+# =========================
+def test_image_readable():
+    for root, _, files in os.walk(RAW_TRAIN_DIR):
+        for f in files:
+            if f.lower().endswith((".png", ".jpg", ".jpeg")):
+                path = os.path.join(root, f)
+
+                img = cv2.imread(path)
+
+                assert img is not None
+                return  # test one image only
+
+    pytest.skip("No readable images found")
