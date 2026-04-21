@@ -1,6 +1,6 @@
 # src/inference/webcam.py
 import cv2
-from predict import predict_emotion, IMG_SIZE, CLASS_NAMES
+from src.inference.predict import predict_emotion, IMG_SIZE, CLASS_NAMES
 
 # Load face detector
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
