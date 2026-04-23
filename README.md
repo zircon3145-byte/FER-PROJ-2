@@ -47,9 +47,9 @@ FER-PROJ-2/
     │   └── webcam.py # if user prefers openCV
     ├── models/
     │   ├── __init__.py
-    │   ├── evaluate.py
+    │   ├── evaluate.py  # MLFLOW included
     │   ├── model.py
-    │   └── train.py
+    │   └── train.py     # MLFLOW included
     ├── utils/
     │   ├── __init__.py
     │   └── config.py
