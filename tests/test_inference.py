@@ -48,3 +48,5 @@ def test_preprocess_normalization():
     processed = preprocess_face(img)
 
     assert np.max(processed) <= 1.0
+    assert np.min(processed) >= 0.0
+
