@@ -41,3 +41,10 @@ def test_preprocess_face_shape():
 
     assert processed.shape == (1, 48, 48, 1)
     assert processed.dtype in [np.float32, np.float64]
+
+def test_preprocess_normalization():
+    img = np.ones((48, 48), dtype=np.uint8) * 255
+
+    processed = preprocess_face(img)
+
+    assert np.max(processed) <= 1.0
