@@ -70,3 +70,19 @@ def test_predict_emotion(monkeypatch):
     result = predict_emotion(img)
 
     assert result == "Happy"
+
+# =========================
+# Prediction output validity
+# =========================
+def test_prediction_is_valid_class(monkeypatch):
+    class FakeModel:
+        def predict(self, x, verbose=0):
+            return np.random.rand(1, len(CLASS_NAMES))
+
+    monkeypatch.setattr("src.inference.predict.get_model", lambda: FakeModel())
+
+    img = create_dummy_face()
+
+    result = predict_emotion(img)
+
+    assert result in CLASS_NAMES
