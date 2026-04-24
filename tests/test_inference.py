@@ -12,6 +12,7 @@ from src.inference.predict import (
     CLASS_NAMES
 )
 
+
 # =========================
 # Helper
 # =========================
